@@ -41,6 +41,10 @@ app.post("/decrypt", (req, res) => {
      res.send({ decrypted });
 });
 
+app.get('/about', (req, res) => {
+     res.sendFile(`C:/Programming/New folder/views/about.html`)
+})
+
 // Start the server
 const port = 3000;
 app.listen(port, () => {
