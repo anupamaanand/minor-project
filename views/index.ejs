@@ -3,28 +3,346 @@
 
 <head>
      <meta charset="UTF-8">
-     <title>Encryption Example</title>
-     <!-- <link rel="stylesheet" href="/styles.css"> -->
-   </head>
+     <title>YOUR SECRET MESSAGE</title>
+     <!-- <link rel="stylesheet" href="views\style.css">
+     <link rel="stylesheet" href="public\styles.css"> -->
+
+     <!-- <style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+flex-direction: column;
+        align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+   
+        display: none;
+        width: 100%;
+    
+}
+
+.navbar-links ul {
+/*     display: flex; */
+    margin: 0;
+    padding: 0;
+  width: 100%;
+        flex-direction: column;
+}
+
+.navbar-links li {
+    list-style: none;
+   text-align: center;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+            padding: .5rem 1rem;
+
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    left: 1rem;
+    display: none;
+          display: flex;
+  
+
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+.navbar-links.active {
+        display: flex;
+
+}
+
+.enc{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 40px;
+    background-color: red;
+}
+.dec{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 40px;
+    background-color: blue;
+}
+.container{
+    display: flex;
+    background-color: yellow;
+}
+     </style> -->
+     <style>
+      * {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #555;
+   background-repeat: no-repeat;
+   background-size: cover;
+   color: rgb(200, 206, 210);
+    margin: 0;
+    padding: 0;
+}
+.heading{
+    /* width: 100%; */
+    align-items: center;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+flex-direction: column;
+        align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+   
+        display: none;
+        width: 100%;
+    
+}
+
+.navbar-links ul {
+/*     display: flex; */
+    margin: 0;
+    padding: 0;
+  width: 100%;
+        flex-direction: column;
+}
+
+.navbar-links li {
+    list-style: none;
+   text-align: center;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+            padding: .5rem 1rem;
+
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    left: 1rem;
+    display: none;
+          display: flex;
+  
+
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+.navbar-links.active {
+        display: flex;
+
+}
+
+.encrypt{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 40px;
+    /* background-color: red; */
+}
+.decrypt{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 40px;
+    /* background-color: blue; */
+}
+.container{
+    display: flex;
+    /* background-color: yellow; */
+}
+
+label{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+input{
+    padding: 4px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    line-height: 20px;
+    border-color: aliceblue;
+    border-radius: 6px;
+}
+button{
+    margin: 5px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    padding: 0;
+    line-height: 25px;
+    border-radius: 8px;
+}
+
+.cryptoContainer{
+    margin-top: 29px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.aboutHead{
+    display: flex;
+}
+.paraAbout{
+    width: 65%;
+}
+.imgAbout{
+    margin: 10px;
+}
+
+#result{
+  border: 1px  solid  #232323;
+}
+     </style>
+    </head>
+   
    
 
 <body>
-     <h1>Welcome To Encryption/Decryption World</h1>
+  
+<!--  NAV BAR  -->
+ <nav class="navbar">
+        <div class="brand-title">CRYPTOGRAPHY</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">Cryptography</a></li>
+            <!-- <li><a href="aboutus.html">About Us</a></li> -->
+          </ul>
+        </div>
+      </nav>
+ 
+<!--  NAV BAR CLOSE  -->
+  
+  
+     <h1 class="heading"> WELCOME TO ENCRYPTION DECRYPTION WORLD </h1>
      <form>
-          <label for="sentence">Sentence:</label>
-          <input type="text" name="sentence" id="sentence">
+       
+    <div class="container">
 
-          <label for="key">Key:</label>
+       <div class="encrypt">
+         <h3>Encrypt</h3>
+         <label for="sentence">PLAIN TEXT HERE :</label>
+          <input type="text" name="sentence" id="sentence">
+         <button type="button" onclick="encrypt()">Encrypt</button>
+       </div>
+
+       <div class="decrypt">
+        <h3>Decrypt</h3>
+         <label for="sentence">CIPHER TEXT HERE:</label>
+          <input type="text" name="sentence" id="sentence2">
+         
+          <label for="key">KEY 1:</label>
           <input type="text" name="key" id="key">
 
-          <label for="iv">IV:</label>
+          <label for="iv">KEY 2:</label>
           <input type="text" name="iv" id="iv">
 
-          <button type="button" onclick="encrypt()">Encrypt</button>
+          
           <button type="button" onclick="decrypt()">Decrypt</button>
      </form>
+       </div>
+         </div>
+
+       <h4 style="padding: 0; margin: 0;">RESULT</h1>  
      <div id="result"></div>
      <script>
+      const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
+})
+     </script>
+
+     <script>
+
+const express = require('express');
+const app = express();
+const path = require('path');
+const router = express.Router();
+      
+
+
+router.get('/about',function(req,res){
+  res.sendFile(path.join(__dirname+'/about.html'));
+});
+          
+
+
           function encrypt() {
                const sentence = document.getElementById('sentence').value;
                fetch('/encrypt', {
@@ -40,7 +358,7 @@
           }
 
           function decrypt() {
-               const encrypted = document.getElementById('sentence').value;
+               const encrypted = document.getElementById('sentence2').value;
                const key = document.getElementById('key').value;
                const iv = document.getElementById('iv').value;
                fetch('/decrypt', {
@@ -55,6 +373,10 @@
                     .catch(error => console.error(error));
           }
      </script>
+
+
+
+
 
 </body>
 
